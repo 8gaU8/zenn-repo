@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "article": "npx zenn new:article",
+    "book": "npx zenn new:book",
+    "preview": "npx zenn preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "zenn-cli": "^0.2.1"
+    "zenn-cli": "^0.4.6"
   }
 }
