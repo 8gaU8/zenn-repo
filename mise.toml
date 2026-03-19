@@ -1,2 +1,18 @@
 [tools]
 node = "24"
+usage = "latest"
+
+[env]
+USERNAME = "8gau8"
+
+[tasks.article]
+description = "create a new article"
+usage = '''
+flag "--slug <slug>" help="slug of the article" 
+'''
+run = """
+SLUG=${USERNAME}-{{ usage.slug }}
+npx zenn new:article --slug $SLUG
+mkdir -p images/$SLUG
+"""
+
