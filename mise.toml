@@ -1,5 +1,6 @@
 [tools]
 node = "24"
+pnpm = "latest"
 usage = "latest"
 
 [env]
@@ -12,7 +13,12 @@ flag "--slug <slug>" help="slug of the article"
 '''
 run = """
 SLUG=${USERNAME}-{{ usage.slug }}
-npx zenn new:article --slug $SLUG
+pnpm zenn new:article --slug $SLUG
+git checkout -b "draft/$SLUG"
+
 mkdir -p images/$SLUG
 """
 
+[tasks.preview]
+description = "Preview the zenn page"
+run = "pnpm zenn preview"
