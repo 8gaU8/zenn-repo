@@ -14,7 +14,6 @@ flag "--slug <slug>" help="slug of the article"
 run = """
 SLUG=${USERNAME}-{{ usage.slug }}
 pnpm zenn new:article --slug $SLUG
-git checkout -b "draft/$SLUG"
 
 mkdir -p images/$SLUG
 """
